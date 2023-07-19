@@ -1,0 +1,470 @@
+#guess {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin: 20vh 0;
+    padding: 0;
+    border: 0;
+}
+.guessTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+}
+.guessTitle p {
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/**/
+.new-Arrivals,
+.ranking {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.seeMore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    cursor: pointer;
+    width: 150px;
+    height: 36px;
+    color: #ffffff;
+    background-color: #3493fb;
+    border: 2px solid #3493fb;
+    border-radius: 3px;
+    margin-bottom: 50px;
+}
+.seeMore:hover {
+    color: #3493fb;
+    background-color: #ffffff;
+}
+/* 首頁：最新商品、銷售排行 */
+.product-container {
+    display: grid;
+    align-self: center;
+    grid-template-columns: repeat(4, 1fr); /* 初始佈局，一列有4件商品 */
+    grid-gap: 30px;
+    width: 1100px; /* 商品間的間隔 */
+    margin: 50px 0;
+}
+/* @keyframes colorChange3 {
+    0% {
+        background-image: linear-gradient(
+            to top left,
+            rgba(200, 200, 219, 0.45) 0%,
+            rgba(239, 239, 255, 0.45) 10%,
+            rgba(221, 221, 239, 0.45) 20%,
+            rgba(207, 207, 225, 0.45) 30%,
+            rgba(220, 220, 238, 0.45) 40%,
+            rgba(240, 240, 255, 0.45) 50%,
+            rgba(220, 220, 238, 0.45) 60%,
+            rgba(207, 207, 225, 0.45) 70%,
+            rgba(221, 221, 239, 0.45) 80%,
+            rgba(239, 239, 255, 0.45) 90%,
+            rgba(200, 200, 219, 0.45) 100%
+        );
+    }
+
+    10% {
+        background-image: linear-gradient(
+            to top left,
+            rgba(239, 239, 255, 0.45) 0%,
+            rgba(200, 200, 219, 0.45) 10%,
+            rgba(239, 239, 255, 0.45) 20%,
+            rgba(221, 221, 239, 0.45) 30%,
+            rgba(207, 207, 225, 0.45) 40%,
+            rgba(220, 220, 238, 0.45) 50%,
+            rgba(240, 240, 255, 0.45) 60%,
+            rgba(220, 220, 238, 0.45) 70%,
+            rgba(207, 207, 225, 0.45) 80%,
+            rgba(221, 221, 239, 0.45) 90%,
+            rgba(239, 239, 255, 0.45) 100%
+        );
+    }
+
+    20% {
+        background-image: linear-gradient(
+            to top left,
+            rgba(221, 221, 239, 0.45) 0%,
+            rgba(239, 239, 255, 0.45) 10%,
+            rgba(200, 200, 219, 0.45) 20%,
+            rgba(239, 239, 255, 0.45) 30%,
+            rgba(221, 221, 239, 0.45) 40%,
+            rgba(207, 207, 225, 0.45) 50%,
+            rgba(220, 220, 238, 0.45) 60%,
+            rgba(240, 240, 255, 0.45) 70%,
+            rgba(220, 220, 238, 0.45) 80%,
+            rgba(207, 207, 225, 0.45) 90%,
+            rgba(221, 221, 239, 0.45) 100%
+        );
+    }
+
+    30% {
+        background-image: linear-gradient(
+            to top left,
+            rgba(207, 207, 225, 0.45) 0%,
+            rgba(221, 221, 239, 0.45) 10%,
+            rgba(239, 239, 255, 0.45) 20%,
+            rgba(200, 200, 219, 0.45) 30%,
+            rgba(239, 239, 255, 0.45) 40%,
+            rgba(221, 221, 239, 0.45) 50%,
+            rgba(207, 207, 225, 0.45) 60%,
+            rgba(220, 220, 238, 0.45) 70%,
+            rgba(240, 240, 255, 0.45) 80%,
+            rgba(220, 220, 238, 0.45) 90%,
+            rgba(207, 207, 225, 0.45) 100%
+        );
+    }
+
+    40% {
+        background-image: linear-gradient(
+            to top left,
+            rgba(220, 220, 238, 0.45) 0%,
+            rgba(207, 207, 225, 0.45) 10%,
+            rgba(221, 221, 239, 0.45) 20%,
+            rgba(239, 239, 255, 0.45) 30%,
+            rgba(200, 200, 219, 0.45) 40%,
+            rgba(239, 239, 255, 0.45) 50%,
+            rgba(221, 221, 239, 0.45) 60%,
+            rgba(207, 207, 225, 0.45) 70%,
+            rgba(220, 220, 238, 0.45) 80%,
+            rgba(240, 240, 255, 0.45) 90%,
+            rgba(220, 220, 238, 0.45) 100%
+        );
+    }
+
+    50% {
+        background-image: linear-gradient(
+            to top left,
+            rgba(240, 240, 255, 0.45) 0%,
+            rgba(220, 220, 238, 0.45) 10%,
+            rgba(207, 207, 225, 0.45) 20%,
+            rgba(221, 221, 239, 0.45) 30%,
+            rgba(239, 239, 255, 0.45) 40%,
+            rgba(200, 200, 219, 0.45) 50%,
+            rgba(239, 239, 255, 0.45) 60%,
+            rgba(221, 221, 239, 0.45) 70%,
+            rgba(207, 207, 225, 0.45) 80%,
+            rgba(220, 220, 238, 0.45) 90%,
+            rgba(240, 240, 255, 0.45) 100%
+        );
+    }
+
+    60% {
+        background-image: linear-gradient(
+            to top left,
+            rgba(220, 220, 238, 0.45) 0%,
+            rgba(240, 240, 255, 0.45) 10%,
+            rgba(220, 220, 238, 0.45) 20%,
+            rgba(207, 207, 225, 0.45) 30%,
+            rgba(221, 221, 239, 0.45) 40%,
+            rgba(239, 239, 255, 0.45) 50%,
+            rgba(200, 200, 219, 0.45) 60%,
+            rgba(239, 239, 255, 0.45) 70%,
+            rgba(221, 221, 239, 0.45) 80%,
+            rgba(207, 207, 225, 0.45) 90%,
+            rgba(220, 220, 238, 0.45) 100%
+        );
+    }
+
+    70% {
+        background-image: linear-gradient(
+            to top left,
+            rgba(207, 207, 225, 0.45) 0%,
+            rgba(220, 220, 238, 0.45) 10%,
+            rgba(240, 240, 255, 0.45) 20%,
+            rgba(220, 220, 238, 0.45) 30%,
+            rgba(207, 207, 225, 0.45) 40%,
+            rgba(221, 221, 239, 0.45) 50%,
+            rgba(239, 239, 255, 0.45) 60%,
+            rgba(200, 200, 219, 0.45) 70%,
+            rgba(239, 239, 255, 0.45) 80%,
+            rgba(221, 221, 239, 0.45) 90%,
+            rgba(207, 207, 225, 0.45) 100%
+        );
+    }
+
+    80% {
+        background-image: linear-gradient(
+            to top left,
+            rgba(221, 221, 239, 0.45) 0%,
+            rgba(207, 207, 225, 0.45) 10%,
+            rgba(220, 220, 238, 0.45) 20%,
+            rgba(240, 240, 255, 0.45) 30%,
+            rgba(220, 220, 238, 0.45) 40%,
+            rgba(207, 207, 225, 0.45) 50%,
+            rgba(221, 221, 239, 0.45) 60%,
+            rgba(239, 239, 255, 0.45) 70%,
+            rgba(200, 200, 219, 0.45) 80%,
+            rgba(239, 239, 255, 0.45) 90%,
+            rgba(221, 221, 239, 0.45) 100%
+        );
+    }
+
+    90% {
+        background-image: linear-gradient(
+            to top left,
+            rgba(239, 239, 255, 0.45) 0%,
+            rgba(221, 221, 239, 0.45) 10%,
+            rgba(207, 207, 225, 0.45) 20%,
+            rgba(220, 220, 238, 0.45) 30%,
+            rgba(240, 240, 255, 0.45) 40%,
+            rgba(220, 220, 238, 0.45) 50%,
+            rgba(207, 207, 225, 0.45) 60%,
+            rgba(221, 221, 239, 0.45) 70%,
+            rgba(239, 239, 255, 0.45) 80%,
+            rgba(200, 200, 219, 0.45) 90%,
+            rgba(239, 239, 255, 0.45) 100%
+        );
+    }
+
+    100% {
+        background-image: linear-gradient(
+            to top left,
+            rgba(200, 200, 219, 0.45) 0%,
+            rgba(239, 239, 255, 0.45) 10%,
+            rgba(221, 221, 239, 0.45) 20%,
+            rgba(207, 207, 225, 0.45) 30%,
+            rgba(220, 220, 238, 0.45) 40%,
+            rgba(240, 240, 255, 0.45) 50%,
+            rgba(220, 220, 238, 0.45) 60%,
+            rgba(207, 207, 225, 0.45) 70%,
+            rgba(221, 221, 239, 0.45) 80%,
+            rgba(239, 239, 255, 0.45) 90%,
+            rgba(200, 200, 219, 0.45) 100%
+        );
+    }
+} */
+.gridProduct {
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+    border-radius: 2px;
+    /* border-radius: 5px;
+    animation: colorChange3 8s infinite;
+    transition: background-image 100s ease; */
+    /* 商品樣式設定 */
+}
+.gridProductImg,
+.gridProductName,
+.gridProductPrice,
+.gridProductStar,
+.gridProductSales {
+    width: 190px;
+    align-self: center;
+}
+.gridProductImg {
+    margin-top: 20px;
+}
+.gridProductImg img {
+    width: 190px;
+    height: 200px;
+    margin: 0 auto;
+}
+.gridProductName {
+    font-size: 13px;
+    height: 20px;
+    margin: 10px 0 5px 0;
+    white-space: nowrap; /* 禁止文本换行 */
+    overflow: hidden; /* 隐藏超出部分的文本 */
+    text-overflow: ellipsis; /* 使用省略号来表示被隐藏的文本 */
+}
+.gridProductPrice {
+    font-size: 12px;
+    height: 20px;
+    margin-bottom: 20px;
+}
+.priceNum {
+    margin: 0 10px;
+    font-size: 15px;
+    font-size: large;
+    color: #3493fb;
+}
+.gridProductStar {
+    align-items: center;
+    justify-content: space-between;
+    height: 22px;
+    margin: 3px 0;
+}
+.gridProductStar img {
+    width: 121px;
+    height: 22px;
+}
+.gridProductSales {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    height: 24px;
+    font-size: 12px;
+    color: #656565;
+}
+
+/* RWD：product1 */
+@media (max-width: 1200px) {
+    .productOuter1 {
+        width: 1000px;
+    }
+    .product-container {
+        width: 1000px;
+    }
+    .gridProductImg,
+    .gridProductName,
+    .gridProductPrice,
+    .gridProductStar,
+    .gridProductSales {
+        width: 185px;
+        align-self: center;
+    }
+    .gridProductImg img {
+        width: 185px;
+        height: 195px;
+    }
+}
+@media (max-width: 1100px) {
+    .product-container {
+        width: 900px;
+    }
+    .productFilter1 {
+        flex-direction: column;
+        align-items: end;
+    }
+    .gridProductImg,
+    .gridProductName,
+    .gridProductPrice,
+    .gridProductStar,
+    .gridProductSales {
+        width: 180px;
+        align-self: center;
+    }
+    .gridProductImg img {
+        width: 180px;
+        height: 190px;
+    }
+}
+@media (max-width: 1000px) {
+    .product-container {
+        grid-template-columns: repeat(3, 1fr);
+        width: 800px;
+    }
+    .gridProductImg,
+    .gridProductName,
+    .gridProductPrice,
+    .gridProductStar,
+    .gridProductSales {
+        width: 200px;
+        align-self: center;
+    }
+    .gridProductImg img {
+        width: 200px;
+        height: 210px;
+    }
+}
+@media (max-width: 900px) {
+    .product-container {
+        width: 700px;
+    }
+    .gridProductImg,
+    .gridProductName,
+    .gridProductPrice,
+    .gridProductStar,
+    .gridProductSales {
+        width: 180px;
+        align-self: center;
+    }
+    .gridProductImg img {
+        width: 180px;
+        height: 190px;
+    }
+}
+@media (max-width: 800px) {
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+        width: 500px;
+    }
+    .gridProductImg,
+    .gridProductName,
+    .gridProductPrice,
+    .gridProductStar,
+    .gridProductSales {
+        width: 200px;
+        align-self: center;
+    }
+    .gridProductImg img {
+        width: 200px;
+        height: 210px;
+    }
+}
+@media (max-width: 600px) {
+    .product-container {
+        width: 490px;
+    }
+    .gridProductImg img {
+        width: 170px;
+        height: 180px;
+    }
+    .gridProductImg,
+    .gridProductName,
+    .gridProductPrice,
+    .gridProductStar,
+    .gridProductSales {
+        width: 180px;
+        align-self: center;
+    }
+    .gridProductImg img {
+        width: 180px;
+        height: 190px;
+    }
+}
+@media (max-width: 550px) {
+    .product-container {
+        grid-template-columns: repeat(1, 1fr);
+        width: 270px;
+    }
+    .filterNT {
+        display: none;
+    }
+    .gridProductImg,
+    .gridProductName,
+    .gridProductPrice,
+    .gridProductStar,
+    .gridProductSales {
+        width: 200px;
+        align-self: center;
+    }
+    .gridProductImg img {
+        width: 200px;
+        height: 210px;
+    }
+}
+@media (max-width: 490px) {
+    .product-container {
+        width: 250px;
+    }
+    .gridProductImg {
+        width: 90%;
+    }
+    .gridProductImg,
+    .gridProductName,
+    .gridProductPrice,
+    .gridProductStar,
+    .gridProductSales {
+        width: 190px;
+        align-self: center;
+    }
+    .gridProductImg img {
+        width: 190px;
+        height: 180px;
+    }
+}
